@@ -70,5 +70,17 @@ trait FunctionOperatorsParameters
 		}
 	}
 	// -----------------------------------------------------------------------------------------------------------------
+	public function setBaseObject(\stdClass $baseObject)
+	{
+		if($this->getParamLeft() instanceof RunnableComand)
+		{
+			$this->getParamLeft()->setObject($baseObject);
+		}
+		if($this->getParamRight() instanceof RunnableComand)
+		{
+			$this->getParamRight()->setObject($baseObject);
+		}
+	}
+	// -----------------------------------------------------------------------------------------------------------------
 }
 

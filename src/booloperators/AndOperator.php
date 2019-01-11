@@ -5,11 +5,11 @@ class AndOperator implements Testable
 {
 	use BooleanOperatorsParameters;
 	// -----------------------------------------------------------------------------------------------------------------
-	public function test(): bool
+	public function test(\stdClass $baseObject): bool
 	{
 		foreach($this->listaTestow as $test)
 		{
-			if(!$test->test())
+			if(!$test->test($baseObject))
 			{
 				return false;
 			}
