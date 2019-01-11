@@ -1,11 +1,11 @@
 {
-	"name" : "BragaRuleEngine",
+	"name" : "braga/enginerule",
 	"description" : "RuleEngine",
 	"type" : "project",
 	"license" : "MIT",
 	"autoload" : {
 		"psr-4" : {
-			"braga\\project\\" : "src"
+			"braga\\enginerule\\" : "src"
 		},
 		"files" : [
 			"src/config/setEnv.php"
