@@ -33,7 +33,7 @@ class RuleEngine
 	/**
 	 * @param \braga\enginerule\iface\Testable $test
 	 */
-	public function setTest($test)
+	public function setTest(Testable $test)
 	{
 		$this->test = $test;
 	}
@@ -41,7 +41,7 @@ class RuleEngine
 	/**
 	 * @param \braga\project\utils\RunnableComand $succesCommand
 	 */
-	public function setSuccesCommand($succesCommand)
+	public function setSuccesCommand(RunnableComand $succesCommand)
 	{
 		$this->succesCommand = $succesCommand;
 	}

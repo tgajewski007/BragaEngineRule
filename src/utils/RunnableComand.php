@@ -1,7 +1,6 @@
 <?php
 namespace braga\project\utils;
-use braga\project\iface\Runnable;
-class RunnableComand implements Runnable
+class RunnableComand
 {
 	protected $object;
 	protected $callMethodString;
@@ -15,11 +14,9 @@ class RunnableComand implements Runnable
 		$this->object = $object;
 		$this->callMethodString = $callMethodString;
 	}
-
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
-	 * {@inheritdoc}
-	 * @see \braga\project\iface\Runnable::run()
+	 * @return \\stdClass
 	 */
 	public function run()
 	{
