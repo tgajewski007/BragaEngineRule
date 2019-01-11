@@ -3,7 +3,7 @@ namespace braga\project\funcoperators;
 use braga\enginerule\iface\Testable;
 class GreatOperator implements Testable
 {
-	use OperatorsParameters;
+	use FuncionOperatorsParameters;
 	// -----------------------------------------------------------------------------------------------------------------
 	public function test(): bool
 	{

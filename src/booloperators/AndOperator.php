@@ -1,10 +1,9 @@
 <?php
 namespace braga\enginerule\booloperators;
 use braga\enginerule\iface\Testable;
-use braga\enginerule\utils\TestListStorage;
 class AndOperator implements Testable
 {
-	use TestListStorage;
+	use BooleanOperatorsParam;
 	// -----------------------------------------------------------------------------------------------------------------
 	public function test(): bool
 	{

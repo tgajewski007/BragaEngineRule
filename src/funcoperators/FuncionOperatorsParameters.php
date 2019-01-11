@@ -1,7 +1,7 @@
 <?php
 namespace braga\project\funcoperators;
 use braga\project\utils\RunnableComand;
-trait OperatorsParameters
+trait FuncionOperatorsParameters
 {
 	// -----------------------------------------------------------------------------------------------------------------
 	/**

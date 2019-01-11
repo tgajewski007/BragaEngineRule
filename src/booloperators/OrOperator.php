@@ -1,9 +1,9 @@
 <?php
+use braga\enginerule\booloperators\BooleanOperatorsParam;
 use braga\enginerule\iface\Testable;
-use braga\enginerule\utils\TestListStorage;
 class OrOperator implements Testable
 {
-	use TestListStorage;
+	use BooleanOperatorsParam;
 	// -----------------------------------------------------------------------------------------------------------------
 	public function test(): bool
 	{

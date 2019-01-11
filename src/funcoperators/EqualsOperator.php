@@ -3,7 +3,7 @@ namespace braga\project\funcoperators;
 use braga\enginerule\iface\Testable;
 class EqualsOperator implements Testable
 {
-	use OperatorsParameters;
+	use FuncionOperatorsParameters;
 	// -----------------------------------------------------------------------------------------------------------------
 	public function test(): bool
 	{
