@@ -1,7 +1,7 @@
 <?php
 namespace braga\enginerule;
 use braga\enginerule\iface\Testable;
-use braga\project\utils\RunnableComand;
+use braga\enginerule\utils\RunnableComand;
 class RuleEngine
 {
 	/**
@@ -23,7 +23,7 @@ class RuleEngine
 	}
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
-	 * @return \braga\project\utils\RunnableComand
+	 * @return RunnableComand
 	 */
 	public function getSuccesCommand()
 	{
@@ -39,7 +39,7 @@ class RuleEngine
 	}
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
-	 * @param \braga\project\utils\RunnableComand $succesCommand
+	 * @param RunnableComand $succesCommand
 	 */
 	public function setSuccesCommand(RunnableComand $succesCommand)
 	{
@@ -50,7 +50,7 @@ class RuleEngine
 	{
 		if($this->succesCommand instanceof RunnableComand && $this->test instanceof Testable)
 		{
-			if($this->test->test())
+			if($this->test->test($this->getSuccesCommand()->getObject()))
 			{
 				return $this->succesCommand->run();
 			}
