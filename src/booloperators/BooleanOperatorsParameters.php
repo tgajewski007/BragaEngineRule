@@ -7,11 +7,11 @@ trait BooleanOperatorsParameters
 	/**
 	 * @var Testable
 	 */
-	protected $listaTestow = array();
+	protected $testList = array();
 	// -----------------------------------------------------------------------------------------------------------------
 	function addTest(Testable $test)
 	{
-		$this->listaTestow[] = $test;
+		$this->testList[] = $test;
 	}
 	// -----------------------------------------------------------------------------------------------------------------
 }

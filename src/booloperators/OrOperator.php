@@ -7,7 +7,7 @@ class OrOperator implements Testable
 	// -----------------------------------------------------------------------------------------------------------------
 	public function test(\stdClass $baseObject): bool
 	{
-		foreach($this->listaTestow as $test)
+		foreach($this->testList as $test)
 		{
 			if($test->test($baseObject))
 			{

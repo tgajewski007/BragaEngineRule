@@ -46,7 +46,7 @@ class RuleEngine
 		$this->succesCommand = $succesCommand;
 	}
 	// -----------------------------------------------------------------------------------------------------------------
-	public function run()
+	public function process()
 	{
 		if($this->succesCommand instanceof RunnableComand && $this->test instanceof Testable)
 		{
