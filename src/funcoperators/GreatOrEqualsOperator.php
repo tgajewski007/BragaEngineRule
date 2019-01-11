@@ -1,11 +1,13 @@
 <?php
 namespace braga\project\funcoperators;
-class EqualsCommandWithStaticValueOperator extends FunctionalOperator
+use braga\enginerule\iface\Testable;
+class GreatOrEqualsOperator implements Testable
 {
+	use OperatorsParameters;
 	// -----------------------------------------------------------------------------------------------------------------
 	public function test(): bool
 	{
-		return $this->commandString->run() == $this->staticParam;
+		return $this->getLeftParamValue() >= $this->getRightParamValue();
 	}
 	// -----------------------------------------------------------------------------------------------------------------
 }
