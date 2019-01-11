@@ -1,0 +1,23 @@
+{
+	"name" : "BragaRuleEngine",
+	"description" : "RuleEngine",
+	"type" : "project",
+	"license" : "MIT",
+	"autoload" : {
+		"psr-4" : {
+			"braga\\project\\" : "src"
+		},
+		"files" : [
+			"src/config/setEnv.php"
+		]
+	},
+	"require" : {
+		"braga/db" : "~2.1",
+		"braga/tools" : "~2.3",
+		"php" : "~7.2",
+		"ext-mbstring" : "*"
+	},
+	"require-dev" : {
+		"braga/dao-generator" : "~2.5"
+	}
+}
