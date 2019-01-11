@@ -1,7 +1,7 @@
 <?php
 namespace braga\enginerule\booloperators;
 use braga\enginerule\iface\Testable;
-trait BooleanOperatorsParam
+trait BooleanOperatorsParameters
 {
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
