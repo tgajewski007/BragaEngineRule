@@ -1,7 +1,7 @@
 <?php
-namespace braga\project\funcoperators;
-use braga\project\utils\RunnableComand;
-trait FuncionOperatorsParameters
+namespace braga\enginerule\funcoperators;
+use braga\enginerule\utils\RunnableComand;
+trait FunctionOperatorsParameters
 {
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
@@ -15,7 +15,7 @@ trait FuncionOperatorsParameters
 	protected $paramRight;
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
-	 * @return \braga\project\utils\RunnableComand|mixed
+	 * @return RunnableComand|mixed
 	 */
 	public function getParamLeft()
 	{
@@ -23,7 +23,7 @@ trait FuncionOperatorsParameters
 	}
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
-	 * @return \braga\project\utils\RunnableComand|mixed
+	 * @return RunnableComand|mixed
 	 */
 	public function getParamRight()
 	{
@@ -31,7 +31,7 @@ trait FuncionOperatorsParameters
 	}
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
-	 * @param \braga\project\utils\RunnableComand|mixed
+	 * @param RunnableComand|mixed
 	 */
 	public function setParamLeft($paramLeft)
 	{
@@ -39,7 +39,7 @@ trait FuncionOperatorsParameters
 	}
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
-	 * @param \braga\project\utils\RunnableComand|mixed
+	 * @param RunnableComand|mixed
 	 */
 	public function setParamRight($paramRight)
 	{

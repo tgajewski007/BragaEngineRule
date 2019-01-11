@@ -1,5 +1,5 @@
 <?php
-namespace braga\project\utils;
+namespace braga\enginerule\utils;
 class RunnableComand
 {
 	protected $object;

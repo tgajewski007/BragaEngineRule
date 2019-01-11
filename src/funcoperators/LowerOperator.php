@@ -1,9 +1,9 @@
 <?php
-namespace braga\project\funcoperators;
+namespace braga\enginerule\funcoperators;
 use braga\enginerule\iface\Testable;
 class LowerOperator implements Testable
 {
-	use FuncionOperatorsParameters;
+	use FunctionOperatorsParameters;
 	// -----------------------------------------------------------------------------------------------------------------
 	public function test(): bool
 	{
