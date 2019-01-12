@@ -6,10 +6,7 @@
 	"autoload" : {
 		"psr-4" : {
 			"braga\\enginerule\\" : "src"
-		},
-		"files" : [
-			"src/config/setEnv.php"
-		]
+		}
 	},
 	"require" : {
 		"braga/db" : "~2.1",
