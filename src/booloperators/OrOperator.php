@@ -23,6 +23,8 @@ class OrOperator implements Testable, IOperatorInfo
 	{
 		$info = new OperatorInfo();
 		$info->className = __CLASS__;
+		$info->name = "Spełniony przynajmniej jeden";
+		$info->symbol = "OR";
 		return $info;
 	}
 	// -----------------------------------------------------------------------------------------------------------------

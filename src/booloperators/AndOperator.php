@@ -23,6 +23,8 @@ class AndOperator implements Testable, IOperatorInfo
 	{
 		$info = new OperatorInfo();
 		$info->className = __CLASS__;
+		$info->name = "Spełnione wszystkie";
+		$info->symbol = "AND";
 		return $info;
 	}
 	// -----------------------------------------------------------------------------------------------------------------

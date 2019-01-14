@@ -17,6 +17,8 @@ class LowerOrEqualsOperator implements Testable, IOperatorInfo
 	{
 		$info = new OperatorInfo();
 		$info->className = __CLASS__;
+		$info->name = "Lewy <= Prawy";
+		$info->symbol = "<=";
 		return $info;
 	}
 	// -----------------------------------------------------------------------------------------------------------------
