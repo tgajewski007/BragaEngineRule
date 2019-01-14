@@ -3,6 +3,8 @@ namespace braga\enginerule\funcoperators;
 use braga\enginerule\iface\IOperatorInfo;
 use braga\enginerule\iface\Testable;
 use braga\enginerule\utils\OperatorInfo;
+
+//
 class GreatOperator implements Testable, IOperatorInfo
 {
 	use FunctionOperatorsParameters;
