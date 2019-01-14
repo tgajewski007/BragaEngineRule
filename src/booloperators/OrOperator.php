@@ -1,7 +1,9 @@
 <?php
 namespace braga\enginerule\booloperators;
+use braga\enginerule\iface\IOperatorInfo;
 use braga\enginerule\iface\Testable;
-class OrOperator implements Testable
+use braga\enginerule\utils\OperatorInfo;
+class OrOperator implements Testable, IOperatorInfo
 {
 	use BooleanOperatorsParameters;
 	// -----------------------------------------------------------------------------------------------------------------
@@ -15,6 +17,13 @@ class OrOperator implements Testable
 			}
 		}
 		return false;
+	}
+	// -----------------------------------------------------------------------------------------------------------------
+	public function getInfo(): OperatorInfo
+	{
+		$info = new OperatorInfo();
+		$info->className = __CLASS__;
+		return $info;
 	}
 	// -----------------------------------------------------------------------------------------------------------------
 }

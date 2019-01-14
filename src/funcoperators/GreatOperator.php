@@ -1,7 +1,9 @@
 <?php
 namespace braga\enginerule\funcoperators;
+use braga\enginerule\iface\IOperatorInfo;
 use braga\enginerule\iface\Testable;
-class GreatOperator implements Testable
+use braga\enginerule\utils\OperatorInfo;
+class GreatOperator implements Testable, IOperatorInfo
 {
 	use FunctionOperatorsParameters;
 	// -----------------------------------------------------------------------------------------------------------------
@@ -9,6 +11,13 @@ class GreatOperator implements Testable
 	{
 		$this->setBaseObject($baseObject);
 		return $this->getLeftParamValue() > $this->getRightParamValue();
+	}
+	// -----------------------------------------------------------------------------------------------------------------
+	public function getInfo(): OperatorInfo
+	{
+		$info = new OperatorInfo();
+		$info->className = __CLASS__;
+		return $info;
 	}
 	// -----------------------------------------------------------------------------------------------------------------
 }
