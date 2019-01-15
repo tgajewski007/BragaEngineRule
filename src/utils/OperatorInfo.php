@@ -12,26 +12,26 @@ class OperatorInfo
 	/**
 	 * @var string
 	 */
-	protected $className;
+	public $className;
 
 	/**
 	 * @var string
 	 */
-	protected $name;
+	public $name;
 
 	/**
 	 * @var string
 	 */
-	protected $symbol;
+	public $symbol;
 
 	/**
 	 * @var int
 	 */
-	protected $cntArgsMin;
+	public $cntArgsMin;
 
 	/**
 	 * @var int
 	 */
-	protected $cntArgsMax;
+	public $cntArgsMax;
 }
 
