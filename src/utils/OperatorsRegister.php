@@ -41,5 +41,16 @@ class OperatorsRegister
 	{
 		return $this->rejestr[$nr];
 	}
+	// ---------------------------------------------------------------------------
+	public function getTableOperatorsInfo(): array
+	{
+		$tableOperatorsInfo = [];
+		foreach($this->rejestr as $operator)
+		{
+			$tableOperatorsInfo[] = $operator->getInfo();
+		}
+		return $tableOperatorsInfo;
+	}
+	// ---------------------------------------------------------------------------
 }
 
