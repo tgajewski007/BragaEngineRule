@@ -3,3 +3,8 @@ composer.phar
 /composer.lock
 /src/config/devEnv.php
 /loggerConfig.xml
+/.buildpath
+/.gitignore
+/.project
+/.settings/
+/miniPerms.sh
