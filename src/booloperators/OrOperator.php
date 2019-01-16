@@ -25,6 +25,8 @@ class OrOperator implements Testable, IOperatorInfo
 		$info->className = __CLASS__;
 		$info->name = "Spełniony przynajmniej jeden";
 		$info->symbol = "OR";
+		$info->cntArgsMin = 1;
+		$info->cntArgsMax = 5;
 		return $info;
 	}
 	// -----------------------------------------------------------------------------------------------------------------

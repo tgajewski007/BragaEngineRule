@@ -25,6 +25,8 @@ class AndOperator implements Testable, IOperatorInfo
 		$info->className = __CLASS__;
 		$info->name = "Spełnione wszystkie";
 		$info->symbol = "AND";
+		$info->cntArgsMin = 1;
+		$info->cntArgsMax = 5;
 		return $info;
 	}
 	// -----------------------------------------------------------------------------------------------------------------

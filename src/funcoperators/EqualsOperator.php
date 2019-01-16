@@ -19,6 +19,8 @@ class EqualsOperator implements Testable, IOperatorInfo
 		$info->className = __CLASS__;
 		$info->name = "Porównanie";
 		$info->symbol = "==";
+		$info->cntArgsMin = 2;
+		$info->cntArgsMax = 2;
 		return $info;
 	}
 	// -----------------------------------------------------------------------------------------------------------------
