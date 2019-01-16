@@ -20,6 +20,7 @@ class OperatorInfo
 	public $name;
 
 	/**
+	 * MM: Unikalny symbol
 	 * @var string
 	 */
 	public $symbol;

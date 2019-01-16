@@ -20,7 +20,7 @@ class LowerOrEqualsOperator implements Testable, IOperatorInfo
 		$info->name = "Lewy <= Prawy";
 		$info->symbol = "<=";
 		$info->cntArgsMin = 2;
-		$info->cntArgsMax = 2;
+		$info->cntArgsMax = 2; // MM: Porównania niech mają zawsze dwa operandy, chociaż matematycznie jest czytelny i poprawny zapis a < b < c < d.
 		return $info;
 	}
 	// -----------------------------------------------------------------------------------------------------------------
