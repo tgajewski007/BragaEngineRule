@@ -9,30 +9,66 @@ namespace braga\enginerule\utils;
  */
 class OperatorInfo
 {
+
 	/**
+	 * MM: Nazwa klasy która realizuje funkcjonalność danego operatora, wykorzystywana
+	 * jest do rozpoznania operatora, więc powinna być unikalna.
 	 * @var string
 	 */
 	public $className;
 
 	/**
+	 * MM: Dowolna nazwa operatora (funkcji operatorowej)
 	 * @var string
 	 */
 	public $name;
 
 	/**
-	 * MM: Unikalny symbol
+	 * MM: Unikalny symbol, wykorzystywany jest do wyświetlania,
+	 * powinien być unikalny i jednoznaczny, np.: < == && OR.
 	 * @var string
 	 */
 	public $symbol;
 
 	/**
+	 * MM: Początkowa ilość argumentów które wymaga operator/funckcja.
+	 * Początkowo taka ilość kontenerów wyświetli się w drzwiastej strukturze
+	 * wyrażenia na operandy.
 	 * @var int
 	 */
-	public $cntArgsMin;
+	public $cntBeginArgs;
 
 	/**
+	 * MM: Jeśli wartość nie-zerowa, to można zwiększać ilość argumentów do
+	 * 'nieskończoności'.
+	 * Wartość niezerowa zwykle występuje ze sposobem wyświetlania INF_VERTICAL.
 	 * @var int
+	 *
 	 */
-	public $cntArgsMax;
+	public $canAddArgs;
+
+	/**
+	 * MM: Stałe do sposobu wyświetlania operatora w drzewiastej strukturze
+	 * wyrażenia, pole $displayMethod.
+	 * -------------------------------------------------------------------
+	 * MM: Wyświetlanie operatora dwu wartościowego 'w poziomie' jako liść (a nie
+	 * jako węzeł) drzewa.
+	 * W poziomie oznacza tutaj, ze operandy są umieszczone jeden
+	 * za drugim, jeden operand jest leftValue a drugi jako rightValue.
+	 */
+	const HORZ_LAST_TWO = "HORZ_LAST_TWO";
+
+	/**
+	 * MM: Wyświetlanie operatora jako pionowej listy z możliwością dodania 'nieskończonej'
+	 * ilości operandów.
+	 */
+	const INF_VERTICAL = "INF_VERTICAL";
+
+	/**
+	 * MM: Sposób wyświetlania operatora w drzewiastej strukturze wyrażenia.
+	 * Operatory dwu-wartościowe są wyświetlane poziomo, operatory and/or jako
+	 * 'nieskończona' lista operandów w pionie.
+	 */
+	public $displayMethod;
 }
 

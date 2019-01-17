@@ -19,8 +19,9 @@ class EqualsOperator implements Testable, IOperatorInfo
 		$info->className = __CLASS__;
 		$info->name = "Porównanie";
 		$info->symbol = "==";
-		$info->cntArgsMin = 2;
-		$info->cntArgsMax = 2; // MM: Porównania niech mają zawsze dwa operandy, chociaż matematycznie jest czytelny i poprawny zapis a < b < c < d.
+		$info->cntBeginArgs = 2;
+		$info->canAddArgs = FALSE;
+		$info->displayMethod = OperatorInfo::HORZ_LAST_TWO;
 		return $info;
 	}
 	// -----------------------------------------------------------------------------------------------------------------

@@ -25,8 +25,9 @@ class AndOperator implements Testable, IOperatorInfo
 		$info->className = __CLASS__;
 		$info->name = "Spełnione wszystkie";
 		$info->symbol = "AND";
-		$info->cntArgsMin = 1; // MM: Jeśli damy jeden argument, to funkcja OR będzie po prostu testowała czy ten jeden argument jest prawdziwy.
-		$info->cntArgsMax = 5; // MM: Musi być maksymalna ilość argumentów, bo jak użytkownik pomyli się i wpisze np. 10090, to przeglądarka zbuduje drzewko z tysiącem liści i być może zaswapuje się.
+		$info->cntBeginArgs = 1;
+		$info->canAddArgs = TRUE;
+		$info->displayMethod = OperatorInfo::INF_VERTICAL;
 		return $info;
 	}
 	// -----------------------------------------------------------------------------------------------------------------
