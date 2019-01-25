@@ -65,10 +65,10 @@ class OperatorInfo
 	const VERTICAL_NODE = "VERTICAL_NODE";
 
 	/**
-	 * MM: Sposób wyświetlania operatora w drzewiastej strukturze wyrażenia.
+	 * MM: Typ operatora w drzewiastej strukturze wyrażenia.
 	 * Operatory dwu-wartościowe są wyświetlane poziomo, operatory and/or jako
 	 * 'nieskończona' lista operandów w pionie.
 	 */
-	public $displayMethod;
+	public $typeNode;
 }
 

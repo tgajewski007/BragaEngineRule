@@ -27,7 +27,7 @@ class OrOperator implements Testable, IOperatorInfo
 		$info->symbol = "OR";
 		$info->cntBeginArgs = 1;
 		$info->canAddArgs = TRUE;
-		$info->displayMethod = OperatorInfo::VERTICAL_NODE;
+		$info->typeNode = OperatorInfo::VERTICAL_NODE;
 		return $info;
 	}
 	// -----------------------------------------------------------------------------------------------------------------

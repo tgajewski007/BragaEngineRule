@@ -21,7 +21,7 @@ class GreatOrEqualsOperator implements Testable, IOperatorInfo
 		$info->symbol = ">=";
 		$info->cntBeginArgs = 2;
 		$info->canAddArgs = FALSE;
-		$info->displayMethod = OperatorInfo::VERTICAL_NODE;
+		$info->typeNode = OperatorInfo::VERTICAL_NODE;
 		return $info;
 	}
 	// -----------------------------------------------------------------------------------------------------------------
