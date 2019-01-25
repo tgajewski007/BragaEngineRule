@@ -23,7 +23,7 @@ class GreatOperator implements Testable, IOperatorInfo
 		$info->symbol = ">";
 		$info->cntBeginArgs = 2;
 		$info->canAddArgs = FALSE;
-		$info->displayMethod = OperatorInfo::HORZ_LAST_TWO;
+		$info->displayMethod = OperatorInfo::VERTICAL_NODE;
 		return $info;
 	}
 	// -----------------------------------------------------------------------------------------------------------------

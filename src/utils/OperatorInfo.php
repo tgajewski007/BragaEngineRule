@@ -56,13 +56,13 @@ class OperatorInfo
 	 * W poziomie oznacza tutaj, ze operandy są umieszczone jeden
 	 * za drugim, jeden operand jest leftValue a drugi jako rightValue.
 	 */
-	const HORZ_LAST_TWO = "HORZ_LAST_TWO";
+	const HORZ_2_NODE = "HORZ_2_NODE";
 
 	/**
 	 * MM: Wyświetlanie operatora jako pionowej listy z możliwością dodania 'nieskończonej'
 	 * ilości operandów.
 	 */
-	const INF_VERTICAL = "INF_VERTICAL";
+	const VERTICAL_NODE = "VERTICAL_NODE";
 
 	/**
 	 * MM: Sposób wyświetlania operatora w drzewiastej strukturze wyrażenia.
