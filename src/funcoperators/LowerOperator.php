@@ -19,8 +19,6 @@ class LowerOperator implements Testable, IOperatorInfo
 		$info->className = __CLASS__;
 		$info->name = "Lewy < Prawy";
 		$info->symbol = "<";
-		$info->cntBeginArgs = 2;
-		$info->canAddArgs = FALSE;
 		$info->typeNode = OperatorInfo::VERTICAL_NODE;
 		return $info;
 	}

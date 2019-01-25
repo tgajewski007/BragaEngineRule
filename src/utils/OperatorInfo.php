@@ -31,23 +31,6 @@ class OperatorInfo
 	public $symbol;
 
 	/**
-	 * MM: Początkowa ilość argumentów które wymaga operator/funckcja.
-	 * Początkowo taka ilość kontenerów wyświetli się w drzwiastej strukturze
-	 * wyrażenia na operandy.
-	 * @var int
-	 */
-	public $cntBeginArgs;
-
-	/**
-	 * MM: Jeśli wartość nie-zerowa, to można zwiększać ilość argumentów do
-	 * 'nieskończoności'.
-	 * Wartość niezerowa zwykle występuje ze sposobem wyświetlania INF_VERTICAL.
-	 * @var int
-	 *
-	 */
-	public $canAddArgs;
-
-	/**
 	 * MM: Stałe do sposobu wyświetlania operatora w drzewiastej strukturze
 	 * wyrażenia, pole $displayMethod.
 	 * -------------------------------------------------------------------

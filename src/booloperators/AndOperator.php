@@ -25,8 +25,6 @@ class AndOperator implements Testable, IOperatorInfo
 		$info->className = __CLASS__;
 		$info->name = "Spełnione wszystkie";
 		$info->symbol = "AND";
-		$info->cntBeginArgs = 1;
-		$info->canAddArgs = TRUE;
 		$info->typeNode = OperatorInfo::HORZ_2_NODE;
 		return $info;
 	}
