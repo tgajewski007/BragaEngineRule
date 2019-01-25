@@ -31,27 +31,19 @@ class OperatorInfo
 	public $symbol;
 
 	/**
-	 * MM: Stałe do sposobu wyświetlania operatora w drzewiastej strukturze
-	 * wyrażenia, pole $displayMethod.
-	 * -------------------------------------------------------------------
-	 * MM: Wyświetlanie operatora dwu wartościowego 'w poziomie' jako liść (a nie
-	 * jako węzeł) drzewa.
-	 * W poziomie oznacza tutaj, ze operandy są umieszczone jeden
-	 * za drugim, jeden operand jest leftValue a drugi jako rightValue.
+	 * MM: Stałe do typów funkcji (operatorów), różne typy wymagają różnych węzłów.
+	 * 1) Dwu-argumentowy komparator, bez możliwości osadzania pod-drzew.
 	 */
-	const HORZ_2_NODE = "HORZ_2_NODE";
+	const TWO_ARG_COMPARATOR = "TwoArgComparator";
 
 	/**
-	 * MM: Wyświetlanie operatora jako pionowej listy z możliwością dodania 'nieskończonej'
-	 * ilości operandów.
+	 * 2) Funkcje główne (np.AND, OR) z nieskończoną ilością argumentów.
 	 */
-	const VERTICAL_NODE = "VERTICAL_NODE";
+	const MAIN_FUNCTION = "MainFunction";
 
 	/**
-	 * MM: Typ operatora w drzewiastej strukturze wyrażenia.
-	 * Operatory dwu-wartościowe są wyświetlane poziomo, operatory and/or jako
-	 * 'nieskończona' lista operandów w pionie.
+	 * MM: Typ funkcji (operatora) w drzewiastej strukturze wyrażenia.
 	 */
-	public $typeNode;
+	public $typeFunction;
 }
 

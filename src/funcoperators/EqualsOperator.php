@@ -19,7 +19,7 @@ class EqualsOperator implements Testable, IOperatorInfo
 		$info->className = __CLASS__;
 		$info->name = "Porównanie == ";
 		$info->symbol = "==";
-		$info->typeNode = OperatorInfo::VERTICAL_NODE;
+		$info->typeFunction = OperatorInfo::TWO_ARG_COMPARATOR;
 		return $info;
 	}
 	// -----------------------------------------------------------------------------------------------------------------

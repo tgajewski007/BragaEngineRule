@@ -25,7 +25,7 @@ class OrOperator implements Testable, IOperatorInfo
 		$info->className = __CLASS__;
 		$info->name = "Spełniony przynajmniej jeden";
 		$info->symbol = "OR";
-		$info->typeNode = OperatorInfo::VERTICAL_NODE;
+		$info->typeFunction = OperatorInfo::MAIN_FUNCTION;
 		return $info;
 	}
 	// -----------------------------------------------------------------------------------------------------------------
