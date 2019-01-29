@@ -2,7 +2,7 @@
 namespace braga\enginerule;
 use braga\enginerule\iface\Testable;
 use braga\enginerule\utils\RunnableComand;
-class RuleEngine
+class EngineRule
 {
 	/**
 	 * @var Testable
