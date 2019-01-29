@@ -57,5 +57,33 @@ class OperatorsRegister
 		// empty
 	}
 	// ---------------------------------------------------------------------------
+	public function getClassByName(string $className)
+	{
+		// MM: Klasy testowe
+		switch($className)
+		{
+			case "LowerOrEqualsOperator":
+				return new LowerOrEqualsOperator();
+			case "LowerOperator":
+				return new LowerOperator();
+			case "GreatOrEqualsOperator":
+				return new GreatOrEqualsOperator();
+			case "GreatOperator":
+				return new GreatOperator();
+			case "EqualsOperator":
+				return new EqualsOperator();
+		}
+
+		// MM: Boolowskie operatory.
+		switch($className)
+		{
+			case "OrOperator":
+				return new OrOperator();
+			case "AndOperator":
+				return new AndOperator();
+		}
+
+		throw new \Exception("CB:58510 Nieoczekiwana nazwa klassy [ " . htmlentities($className) . "]");
+	}
 }
 
