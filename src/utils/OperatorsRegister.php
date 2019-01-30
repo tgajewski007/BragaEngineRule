@@ -10,7 +10,7 @@ use braga\enginerule\funcoperators\LowerOrEqualsOperator;
 
 /**
  * created on pon, 14 sty 2019, 18:19:52 CET
- * error prefix CB:585
+ * error prefix ER:585
  * @author Mariusz Marszałkowski
  * @package
  */
@@ -83,7 +83,7 @@ class OperatorsRegister
 				return new AndOperator();
 		}
 
-		throw new \Exception("CB:58510 Nieoczekiwana nazwa klassy [ " . htmlentities($className) . "]");
+		throw new \Exception("ER:58510 Nieoczekiwana nazwa klasy [ " . htmlentities($className) . "]");
 	}
 }
 
