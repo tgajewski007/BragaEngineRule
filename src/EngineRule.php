@@ -5,11 +5,6 @@ use braga\enginerule\utils\RunnableComand;
 class EngineRule
 {
 	/**
-	 * @var \stdClass
-	 */
-	private $baseObject = null;
-	// -----------------------------------------------------------------------------------------------------------------
-	/**
 	 * @var Testable
 	 */
 	private $testObject = null;
@@ -36,14 +31,6 @@ class EngineRule
 	}
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
-	 * @return \stdClass
-	 */
-	public function getBaseObject(): \stdClass
-	{
-		return $this->baseObject;
-	}
-	// -----------------------------------------------------------------------------------------------------------------
-	/**
 	 * @param \braga\enginerule\iface\Testable $test
 	 */
 	public function setTestObject(Testable $testObject)
@@ -59,21 +46,13 @@ class EngineRule
 		$this->succesObject = $succesObject;
 	}
 	// -----------------------------------------------------------------------------------------------------------------
-	/**
-	 * @param \stdClass $obiect
-	 */
-	public function setBaseObiect(\stdClass $baseObject)
-	{
-		$this->baseObject = $baseObject;
-	}
-	// -----------------------------------------------------------------------------------------------------------------
-	public function process()
+	public function process(\stdClass $baseObject)
 	{
 		if($this->succesCommand instanceof RunnableComand && $this->test instanceof Testable)
 		{
-			if($this->test->test($this->getBaseObject()))
+			if($this->test->test($baseObject))
 			{
-				return $this->succesCommand->run($this->getBaseObject());
+				return $this->succesCommand->run($baseObject);
 			}
 		}
 		else
