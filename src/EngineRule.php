@@ -2,6 +2,8 @@
 namespace braga\enginerule;
 use braga\enginerule\iface\Testable;
 use braga\enginerule\utils\RunnableComand;
+
+// MM: Główna klasa silnika regułowego.
 class EngineRule
 {
 	/**
