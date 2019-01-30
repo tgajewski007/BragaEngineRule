@@ -1,6 +1,7 @@
 <?php
 namespace braga\enginerule\utils;
-class RunnableComand
+use braga\enginerule\iface\IRunnable;
+class RunnableComand implements IRunnable
 {
 	/**
 	 * @var string

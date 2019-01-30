@@ -3,6 +3,7 @@ namespace braga\enginerule;
 use braga\enginerule\iface\Testable;
 use braga\enginerule\utils\OperatorsRegister;
 use braga\enginerule\utils\RunnableComand;
+use braga\enginerule\iface\IRunnable;
 
 /**
  * created on wto, 29 sty 2019, 16:36:28 CET
@@ -24,17 +25,16 @@ class Compiler
 	//
 	private static function compileTwoArgsFunction(MainNode $node): Testable
 	{
-		$allowClasses = [
-						"LowerOrEqualsOperator",
-						"LowerOperator",
-						"GreatOrEqualsOperator",
-						"GreatOperator",
-						"EqualsOperator" ];
-
-		if(!in_array($node->className, $allowClasses))
-		{
-			throw new \Exception("ER:12491 Nieoczekiwana nazwa klasy [" . htmlentities($node->className) . "]");
-		}
+		// $allowClasses = [
+		// "LowerOrEqualsOperator",
+		// "LowerOperator",
+		// "GreatOrEqualsOperator",
+		// "GreatOperator",
+		// "EqualsOperator" ];
+		// if(!in_array($node->className, $allowClasses))
+		// {
+		// throw new \Exception("ER:12491 Nieoczekiwana nazwa klasy [" . htmlentities($node->className) . "]");
+		// }
 		$rejestr = new OperatorsRegister();
 
 		/** @var FunctionOperatorsParameters $operator */
@@ -91,8 +91,17 @@ class Compiler
 				throw new \Exception("ER:12496 Nie znany typ wezla [" . htmlentities($rootNode->typeNode) . "]");
 		}
 	}
-	public static function compile(string $jsSerialize): EngineRule
+	private static function compileSuccesObject(string $succesObject): IRunnable
 	{
+		$runCommand = new RunnableComand();
+		// TODO: Wybór obiektu: send mail, albo standardowy... A może metoda do wywalenia i
+		// tylko wywołania
+		return $runCommand;
+	}
+	public static function compile(string $jsSerialize, string $succesObject): EngineRule
+	{
+		$engineRule = new EngineRule();
+		$engineRule->setSuccesObject($succesObject)
 		$nodes = json_decode($jsSerialize);
 		foreach($nodes as &$node)
 		{
