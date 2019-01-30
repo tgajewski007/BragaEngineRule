@@ -3,21 +3,9 @@ namespace braga\enginerule\utils;
 class RunnableComand
 {
 	/**
-	 * @var \stdClass
-	 */
-	protected $object;
-	/**
 	 * @var string
 	 */
-	protected $callMethodString;
-	// -----------------------------------------------------------------------------------------------------------------
-	/**
-	 * @return \stdClass
-	 */
-	public function getObject()
-	{
-		return $this->object;
-	}
+	private $callMethodString;
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
 	 * @return string
@@ -28,17 +16,9 @@ class RunnableComand
 	}
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
-	 * @param \stdClass $object
-	 */
-	public function setObject(\stdClass $object)
-	{
-		$this->object = $object;
-	}
-	// -----------------------------------------------------------------------------------------------------------------
-	/**
 	 * @param string $callMethodString
 	 */
-	public function setCallMethodString($callMethodString)
+	public function setCallMethodString(string $callMethodString)
 	{
 		$this->callMethodString = $callMethodString;
 	}
@@ -46,15 +26,15 @@ class RunnableComand
 	/**
 	 * @return mixed
 	 */
-	public function run()
+	public function run(\stdClass $baseObject)
 	{
-		$object = $this->object;
+		$localObject = clone $baseObject;
 		$methods = explode(".", trim($this->callMethodString));
 		foreach($methods as $call)
 		{
-			$object = $object->{$call}();
+			$localObject = $localObject->{$call}();
 		}
-		return $object;
+		return $localObject;
 	}
 	// -----------------------------------------------------------------------------------------------------------------
 }

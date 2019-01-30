@@ -2,6 +2,7 @@
 namespace braga\enginerule;
 use braga\enginerule\iface\Testable;
 use braga\enginerule\utils\OperatorsRegister;
+use braga\enginerule\utils\RunnableComand;
 
 /**
  * created on wto, 29 sty 2019, 16:36:28 CET
@@ -14,6 +15,11 @@ use braga\enginerule\utils\OperatorsRegister;
 class Compiler
 {
 	const ID_ROOT_NODE = 0;
+
+	//
+	// private static function makeBaseObject(string $name, int $id) {
+	// $allowName = ["Pozyczka","Klient","Region"];
+	// }
 
 	//
 	private static function compileTwoArgsFunction(MainNode $node): Testable
@@ -33,6 +39,31 @@ class Compiler
 
 		/** @var FunctionOperatorsParameters $operator */
 		$operator = $rejestr->getClassByName($node->className);
+		if($node->lValue->rawValue)
+		{
+			$operator->setParamLeft($node->lValue->rawValue);
+		}
+		elseif($node->lValue->idTestFunction)
+		{
+			$runCommand = new RunnableComand();
+			$runCommand->setObject($object);
+		}
+		else
+		{
+			throw new \Exception("ER:12469 Brak lewej wartosci");
+		}
+
+		if($node->rValue->rawValue)
+		{
+		}
+		elseif($node->rValue->idTestFunction)
+		{
+		}
+		else
+		{
+			throw new \Exception("ER:12468 Brak prawej wartosci");
+		}
+
 		// TODO: $operator->setParamRight
 		// TODO: $operator->setParamLeft
 	}

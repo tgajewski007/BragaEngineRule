@@ -46,11 +46,11 @@ trait FunctionOperatorsParameters
 		$this->paramRight = $paramRight;
 	}
 	// -----------------------------------------------------------------------------------------------------------------
-	public function getLeftParamValue()
+	public function getLeftParamValue(\stdClass $baseObject)
 	{
 		if($this->paramLeft instanceof RunnableComand)
 		{
-			return $this->paramLeft->run();
+			return $this->paramLeft->run($baseObject);
 		}
 		else
 		{
@@ -58,27 +58,15 @@ trait FunctionOperatorsParameters
 		}
 	}
 	// -----------------------------------------------------------------------------------------------------------------
-	public function getRightParamValue()
+	public function getRightParamValue(\stdClass $baseObject)
 	{
 		if($this->paramLeft instanceof RunnableComand)
 		{
-			return $this->paramRight->run();
+			return $this->paramRight->run($baseObject);
 		}
 		else
 		{
 			return $this->paramRight;
-		}
-	}
-	// -----------------------------------------------------------------------------------------------------------------
-	public function setBaseObject(\stdClass $baseObject)
-	{
-		if($this->getParamLeft() instanceof RunnableComand)
-		{
-			$this->getParamLeft()->setObject($baseObject);
-		}
-		if($this->getParamRight() instanceof RunnableComand)
-		{
-			$this->getParamRight()->setObject($baseObject);
 		}
 	}
 	// -----------------------------------------------------------------------------------------------------------------

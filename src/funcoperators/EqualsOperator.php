@@ -9,8 +9,7 @@ class EqualsOperator implements Testable, IOperatorInfo
 	// -----------------------------------------------------------------------------------------------------------------
 	public function test(\stdClass $baseObject): bool
 	{
-		$this->setBaseObject($baseObject);
-		return $this->getLeftParamValue() == $this->getRightParamValue();
+		return $this->getLeftParamValue($baseObject) == $this->getRightParamValue($baseObject);
 	}
 	// -----------------------------------------------------------------------------------------------------------------
 	public function getInfo(): OperatorInfo

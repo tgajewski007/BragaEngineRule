@@ -5,59 +5,80 @@ use braga\enginerule\utils\RunnableComand;
 class EngineRule
 {
 	/**
+	 * @var \stdClass
+	 */
+	private $baseObject = null;
+	// -----------------------------------------------------------------------------------------------------------------
+	/**
 	 * @var Testable
 	 */
-	protected $test = null;
+	private $testObject = null;
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
 	 * @var RunnableComand
 	 */
-	protected $succesCommand = null;
+	private $succesObject = null;
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
 	 * @return \braga\enginerule\iface\Testable
 	 */
-	public function getTest()
+	public function getTestObject()
 	{
-		return $this->test;
+		return $this->testObject;
 	}
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
 	 * @return RunnableComand
 	 */
-	public function getSuccesCommand()
+	public function getSuccesObject()
 	{
-		return $this->succesCommand;
+		return $this->succesObject;
+	}
+	// -----------------------------------------------------------------------------------------------------------------
+	/**
+	 * @return \stdClass
+	 */
+	public function getBaseObject(): \stdClass
+	{
+		return $this->baseObject;
 	}
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
 	 * @param \braga\enginerule\iface\Testable $test
 	 */
-	public function setTest(Testable $test)
+	public function setTestObject(Testable $testObject)
 	{
-		$this->test = $test;
+		$this->testObject = $testObject;
 	}
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
 	 * @param RunnableComand $succesCommand
 	 */
-	public function setSuccesCommand(RunnableComand $succesCommand)
+	public function setSuccesObject(RunnableComand $succesObject)
 	{
-		$this->succesCommand = $succesCommand;
+		$this->succesObject = $succesObject;
+	}
+	// -----------------------------------------------------------------------------------------------------------------
+	/**
+	 * @param \stdClass $obiect
+	 */
+	public function setBaseObiect(\stdClass $baseObject)
+	{
+		$this->baseObject = $baseObject;
 	}
 	// -----------------------------------------------------------------------------------------------------------------
 	public function process()
 	{
 		if($this->succesCommand instanceof RunnableComand && $this->test instanceof Testable)
 		{
-			if($this->test->test($this->getSuccesCommand()->getObject()))
+			if($this->test->test($this->getBaseObject()))
 			{
-				return $this->succesCommand->run();
+				return $this->succesCommand->run($this->getBaseObject());
 			}
 		}
 		else
 		{
-			throw new \Exception("RE:20101 Bad config");
+			throw new \Exception("ER:20101 Bad config");
 		}
 	}
 	// -----------------------------------------------------------------------------------------------------------------

@@ -2,5 +2,5 @@
 namespace braga\enginerule\iface;
 interface Testable
 {
-	public function test(\stdClass $baseComand): bool;
+	public function test(\stdClass $baseObiect): bool;
 }
