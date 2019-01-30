@@ -12,8 +12,7 @@
 		"braga/db" : "~2.1",
 		"braga/tools" : "~2.3",
 		"php" : ">=7.2",
-		"ext-mbstring" : "*",
-		"netresearch/jsonmapper" : "~1.4"
+		"ext-mbstring" : "*"
 	},
 	"require-dev" : {
 		"braga/dao-generator" : "~2.5"
