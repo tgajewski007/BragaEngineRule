@@ -54,9 +54,9 @@ class EngineRule
 	}
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
-	 * @param \stdClass $succesParam
+	 * @param mixed $succesParam
 	 */
-	public function setSuccesParam(\stdClass $succesParam)
+	public function setSuccesParam($succesParam)
 	{
 		$this->succesParam = $succesParam;
 	}
