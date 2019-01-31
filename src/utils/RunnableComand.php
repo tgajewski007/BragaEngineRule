@@ -26,15 +26,22 @@ class RunnableComand
 	/**
 	 * @return mixed
 	 */
-	public function run(\stdClass $baseObject)
+	public function run(\stdClass $baseObject, $param = null)
 	{
-		$localObject = clone $baseObject;
 		$methods = explode(".", trim($this->callMethodString));
-		foreach($methods as $call)
+		for($i = 0; $i < count($methods); $i++)
 		{
-			$localObject = $localObject->{$call}();
+			$method = $methods[$i];
+			$isLast = $i == count($methods) - 1;
+			if($isLast && $param !== null)
+			{
+				$baseObject = $baseObject->{$method}($param);
+			}
+			else
+			{
+				$baseObject = $baseObject->{$method}();
+			}
 		}
-		return $localObject;
 	}
 	// -----------------------------------------------------------------------------------------------------------------
 }

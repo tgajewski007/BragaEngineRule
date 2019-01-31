@@ -17,12 +17,19 @@ class EngineRule
 	private $succesObject = null;
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
-	 * @var \stdClass
+	 * @var string|null $succesParam
 	 */
 	private $succesParam = null;
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
-	 * @return \stdClass
+	 * MM: Dumachamy na zimne, sprawdzamy czy typ obiektu bazowego jest zgodny z
+	 * typem zdefiniowanym w zdarzeniu.
+	 * @var string $typeBaseObject
+	 */
+	private $typeBaseObject = "";
+	// -----------------------------------------------------------------------------------------------------------------
+	/**
+	 * @return string|null
 	 */
 	public function getSuccesParam()
 	{
@@ -54,7 +61,7 @@ class EngineRule
 	}
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
-	 * @param mixed $succesParam
+	 * @param string|null $succesParam
 	 */
 	public function setSuccesParam($succesParam)
 	{
@@ -69,13 +76,25 @@ class EngineRule
 		$this->succesObject = $succesObject;
 	}
 	// -----------------------------------------------------------------------------------------------------------------
+	/**
+	 * @param string $typeBaseObject
+	 */
+	public function setTypeBaseObject(string $typeBaseObject)
+	{
+		$this->typeBaseObject = $typeBaseObject;
+	}
+	// -----------------------------------------------------------------------------------------------------------------
 	public function process(\stdClass $baseObject)
 	{
+		if(strcmp(get_class($baseObject), $this->typeBaseObject))
+		{
+			throw new \Exception("ER:20103 Niespodziewany typ obiektu bazowego: [" . get_class($baseObject) . "]");
+		}
 		if($this->succesObject instanceof RunnableComand && $this->testObject instanceof Testable)
 		{
 			if($this->testObject->test($baseObject))
 			{
-				return $this->succesObject->run($this->succesParam);
+				return $this->succesObject->run($baseObject, $this->succesParam);
 			}
 		}
 		else
