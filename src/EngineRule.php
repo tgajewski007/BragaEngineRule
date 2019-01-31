@@ -17,6 +17,19 @@ class EngineRule
 	private $succesObject = null;
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
+	 * @var \stdClass
+	 */
+	private $succesParam = null;
+	// -----------------------------------------------------------------------------------------------------------------
+	/**
+	 * @return \stdClass
+	 */
+	public function getSuccesParam()
+	{
+		return $this->succesParam;
+	}
+	// -----------------------------------------------------------------------------------------------------------------
+	/**
 	 * @return \braga\enginerule\iface\Testable
 	 */
 	public function getTestObject()
@@ -41,6 +54,14 @@ class EngineRule
 	}
 	// -----------------------------------------------------------------------------------------------------------------
 	/**
+	 * @param \stdClass $succesParam
+	 */
+	public function setSuccesParam(\stdClass $succesParam)
+	{
+		$this->succesParam = $succesParam;
+	}
+	// -----------------------------------------------------------------------------------------------------------------
+	/**
 	 * @param RunnableComand $succesCommand
 	 */
 	public function setSuccesObject(RunnableComand $succesObject)
@@ -50,11 +71,11 @@ class EngineRule
 	// -----------------------------------------------------------------------------------------------------------------
 	public function process(\stdClass $baseObject)
 	{
-		if($this->succesCommand instanceof RunnableComand && $this->test instanceof Testable)
+		if($this->succesObject instanceof RunnableComand && $this->testObject instanceof Testable)
 		{
-			if($this->test->test($baseObject))
+			if($this->testObject->test($baseObject))
 			{
-				return $this->succesCommand->run($baseObject);
+				return $this->succesObject->run($this->succesParam);
 			}
 		}
 		else
