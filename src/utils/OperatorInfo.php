@@ -50,7 +50,7 @@ class OperatorInfo
 	public function setClassName(string $className)
 	{
 		$matches = [];
-		if(!preg_match('/^.*\\([^\\]+)$/', $className, $matches))
+		if(!preg_match('/^.*\\\\([^\\\\]+)$/', $className, $matches))
 		{
 			throw new \Exception("CB:43178 Problem z wyszukaniem nazwy klasy w ciagu [" . htmlentities($className) . "]");
 		}
