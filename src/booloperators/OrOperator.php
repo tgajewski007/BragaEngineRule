@@ -22,7 +22,7 @@ class OrOperator implements Testable, IOperatorInfo
 	public function getInfo(): OperatorInfo
 	{
 		$info = new OperatorInfo();
-		$info->className = __CLASS__;
+		$info->setClassName(__CLASS__);
 		$info->name = "Spełniony przynajmniej jeden";
 		$info->symbol = "OR";
 		$info->typeFunction = OperatorInfo::MAIN_FUNCTION;

@@ -22,7 +22,7 @@ class AndOperator implements Testable, IOperatorInfo
 	public function getInfo(): OperatorInfo
 	{
 		$info = new OperatorInfo();
-		$info->className = __CLASS__;
+		$info->setClassName(__CLASS__);
 		$info->name = "Spełnione wszystkie";
 		$info->symbol = "AND";
 		$info->typeFunction = OperatorInfo::MAIN_FUNCTION;

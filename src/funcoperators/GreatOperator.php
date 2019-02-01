@@ -17,7 +17,7 @@ class GreatOperator implements Testable, IOperatorInfo
 	public function getInfo(): OperatorInfo
 	{
 		$info = new OperatorInfo();
-		$info->className = __CLASS__;
+		$info->setClassName(__CLASS__);
 		$info->name = "Lewy > Prawy";
 		$info->symbol = ">";
 		$info->typeFunction = OperatorInfo::TWO_ARG_COMPARATOR;

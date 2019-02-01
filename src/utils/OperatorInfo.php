@@ -45,5 +45,20 @@ class OperatorInfo
 	 * MM: Typ funkcji (operatora) w drzewiastej strukturze wyrażenia.
 	 */
 	public $typeFunction;
+
+	// MM: Wyciąga ze ścieżki samą nazwę klasy i ustawia ją w polu className.
+	public function setClassName(string $className)
+	{
+		$matches = [];
+		if(!preg_match('/^.*\\([^\\]+)$/', $className, $matches))
+		{
+			throw new \Exception("CB:43178 Problem z wyszukaniem nazwy klasy w ciagu [" . htmlentities($className) . "]");
+		}
+		if(count($matches) != 2)
+		{
+			throw new \Exception("CB:43167 Problem z wyszukaniem nazwy klasy w ciagu [" . htmlentities($className) . "]");
+		}
+		$this->className = $matches[1];
+	}
 }
 
