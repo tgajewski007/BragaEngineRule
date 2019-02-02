@@ -46,8 +46,8 @@ class OperatorInfo
 	 */
 	public $typeFunction;
 
-	// MM: Wyciąga ze ścieżki samą nazwę klasy i ustawia ją w polu className.
-	public function setClassName(string $className)
+	// MM: Wyciąga ze ścieżki samą nazwę klasy
+	public static function extractClassName(string $className)
 	{
 		$matches = [];
 		if(!preg_match('/^.*\\\\([^\\\\]+)$/', $className, $matches))
@@ -58,7 +58,13 @@ class OperatorInfo
 		{
 			throw new \Exception("CB:43167 Problem z wyszukaniem nazwy klasy w ciagu [" . htmlentities($className) . "]");
 		}
-		$this->className = $matches[1];
+		return $matches[1];
+	}
+
+	// MM: Wyciąga ze ścieżki samą nazwę klasy i ustawia ją w polu className.
+	public function setClassName(string $className)
+	{
+		$this->className = self::extractClassName($className);
 	}
 }
 
