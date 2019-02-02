@@ -31,15 +31,18 @@ class RunnableComand
 		$methods = explode(".", trim($this->callMethodString));
 		for($i = 0; $i < count($methods); $i++)
 		{
-			$method = $methods[$i];
-			$isLast = $i == count($methods) - 1;
-			if($isLast && $param !== null)
+			$method = trim($methods[$i]);
+			if(strlen($method) > 0)
 			{
-				$baseObject = $baseObject->{$method}($param);
-			}
-			else
-			{
-				$baseObject = $baseObject->{$method}();
+				$isLast = $i == count($methods) - 1;
+				if($isLast && $param !== null)
+				{
+					$baseObject = $baseObject->{$method}($param);
+				}
+				else
+				{
+					$baseObject = $baseObject->{$method}();
+				}
 			}
 		}
 		return $baseObject;
