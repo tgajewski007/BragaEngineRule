@@ -60,7 +60,7 @@ trait FunctionOperatorsParameters
 	// -----------------------------------------------------------------------------------------------------------------
 	public function getRightParamValue($baseObject)
 	{
-		if($this->paramLeft instanceof RunnableComand)
+		if($this->paramRight instanceof RunnableComand)
 		{
 			return $this->paramRight->run($baseObject);
 		}
