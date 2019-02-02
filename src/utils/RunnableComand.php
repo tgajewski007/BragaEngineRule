@@ -26,7 +26,7 @@ class RunnableComand
 	/**
 	 * @return mixed
 	 */
-	public function run(\stdClass $baseObject, $param = null)
+	public function run($baseObject, $param = null)
 	{
 		$methods = explode(".", trim($this->callMethodString));
 		for($i = 0; $i < count($methods); $i++)

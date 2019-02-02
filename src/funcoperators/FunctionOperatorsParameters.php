@@ -46,7 +46,7 @@ trait FunctionOperatorsParameters
 		$this->paramRight = $paramRight;
 	}
 	// -----------------------------------------------------------------------------------------------------------------
-	public function getLeftParamValue(\stdClass $baseObject)
+	public function getLeftParamValue($baseObject)
 	{
 		if($this->paramLeft instanceof RunnableComand)
 		{
@@ -58,7 +58,7 @@ trait FunctionOperatorsParameters
 		}
 	}
 	// -----------------------------------------------------------------------------------------------------------------
-	public function getRightParamValue(\stdClass $baseObject)
+	public function getRightParamValue($baseObject)
 	{
 		if($this->paramLeft instanceof RunnableComand)
 		{

@@ -84,7 +84,7 @@ class EngineRule
 		$this->typeBaseObject = $typeBaseObject;
 	}
 	// -----------------------------------------------------------------------------------------------------------------
-	public function process(\stdClass $baseObject)
+	public function process($baseObject)
 	{
 		if(strcmp(get_class($baseObject), $this->typeBaseObject))
 		{

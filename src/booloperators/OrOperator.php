@@ -7,7 +7,7 @@ class OrOperator implements Testable, IOperatorInfo
 {
 	use BooleanOperatorsParameters;
 	// -----------------------------------------------------------------------------------------------------------------
-	public function test(\stdClass $baseObject): bool
+	public function test($baseObject): bool
 	{
 		foreach($this->testList as $test)
 		{

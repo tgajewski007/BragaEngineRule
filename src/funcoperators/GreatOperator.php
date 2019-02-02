@@ -9,7 +9,7 @@ class GreatOperator implements Testable, IOperatorInfo
 {
 	use FunctionOperatorsParameters;
 	// -----------------------------------------------------------------------------------------------------------------
-	public function test(\stdClass $baseObject): bool
+	public function test($baseObject): bool
 	{
 		return $this->getLeftParamValue($baseObject) > $this->getRightParamValue($baseObject);
 	}
