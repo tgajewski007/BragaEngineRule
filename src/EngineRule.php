@@ -2,6 +2,7 @@
 namespace braga\enginerule;
 use braga\enginerule\iface\Testable;
 use braga\enginerule\utils\RunnableComand;
+use braga\enginerule\utils\OperatorInfo;
 
 // MM: Główna klasa silnika regułowego.
 class EngineRule
@@ -86,7 +87,7 @@ class EngineRule
 	// -----------------------------------------------------------------------------------------------------------------
 	public function process($baseObject)
 	{
-		if(strcmp(get_class($baseObject), $this->typeBaseObject))
+		if(strcmp(OperatorInfo::extractClassName(get_class($baseObject)), $this->typeBaseObject))
 		{
 			throw new \Exception("ER:20103 Niespodziewany typ obiektu bazowego: [" . get_class($baseObject) . "]");
 		}
